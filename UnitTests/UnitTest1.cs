@@ -7,6 +7,8 @@ using TestAPI.Controllers;
 
 namespace UnitTests
 {
+
+    //Checks if there is atleast a forecast.
     [TestClass]
     public class UnitTest1
     {
