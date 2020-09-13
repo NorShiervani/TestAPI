@@ -21,7 +21,7 @@ namespace UnitTests
             forecasts = WeatherForecastController.Get();
 
             //Assert
-            bool forecastsExist = forecasts != null && forecasts.Count() < 0;
+            bool forecastsExist = forecasts != null && forecasts.Count() > 0;
             Assert.IsTrue(forecastsExist, "Weatherforecasts does not exist.");
         }
     }
