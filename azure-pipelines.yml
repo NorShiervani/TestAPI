@@ -23,6 +23,18 @@ variables:
 
  
 stages:
+- stage: Testing
+  displayName: Test stage
+  jobs:  
+  - job: Testing
+    displayName: Testing
+    steps:
+    - task: "DotNetCoreCLI@2"
+      displayName: Run unit tests of the project.
+      inputs:
+        command: test
+        projects: $(testfilePath)
+
 - stage: Build
   displayName: Build and push stage
   jobs:  
