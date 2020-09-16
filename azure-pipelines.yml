@@ -11,6 +11,7 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'b5d87616-f1a5-4c16-a1a4-c580951e49db'
+  azureSubscription: 'f6b298f4-0f5f-407c-a479-abedb513de66'
   imageRepository: 'norshiervanitestapi'
   containerRegistry: 'ovning2.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/DockerFile'
@@ -54,7 +55,7 @@ stages:
           $(tag)
     - task: AzureWebAppContainer@1
       inputs:
-        azureSubscription: f6b298f4-0f5f-407c-a479-abedb513de66
+        azureSubscription: $(azureSubscription)
         appName: NortestAPIWebApp
         containers: $(containerRegistry)/$(imageRepository):$(tag)
 
