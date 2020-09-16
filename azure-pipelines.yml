@@ -54,7 +54,7 @@ stages:
           $(tag)
     - task: AzureWebAppContainer@1
       inputs:
-        azureSubscription: 'Azure for Students'
+        azureSubscription: 'f6b298f4-0f5f-407c-a479-abedb513de66'
         appName: 'NortestAPIWebApp'
         containers: $(containerRegistry)/$(imageRepository):$(tag)
 
