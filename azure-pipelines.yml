@@ -55,7 +55,7 @@ stages:
           $(tag)
     - task: AzureWebAppContainer@1
       inputs:
-        azureSubscription: $(azureSubscription)
+        azureSubscription: Azure for Students
         appName: NortestAPIWebApp
         containers: $(containerRegistry)/$(imageRepository):$(tag)
 
