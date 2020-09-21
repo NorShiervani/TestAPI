@@ -53,11 +53,14 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
-
-    - task: AzureWebAppContainer@1
+    - task: AzureRmWebAppDeployment@4
       inputs:
-        azureSubscription: 'Azure for Students(f6b298f4-0f5f-407c-a479-abedb513de66)'
-        appName: 'ovning22'
-        containers: '$(containerRegistry)/$(imageRepository):$(tag)'
-        multicontainerConfigFile: '$(dockerfilePath)'
+        ConnectionType: 'AzureRM'
+        azureSubscription: 'Azure for Students (f6b298f4-0f5f-407c-a479-abedb513de66)'
+        appType: 'webAppContainer'
+        WebAppName: 'ovning22'
+        DockerNamespace: 'ovning2.azurecr.io'
+        DockerRepository: 'norshiervanitestapi'
+        DockerImageTag: 'latest'
+
 
