@@ -61,6 +61,6 @@ stages:
         WebAppName: 'ovning22'
         DockerNamespace: 'ovning2.azurecr.io'
         DockerRepository: 'norshiervanitestapi'
-        DockerImageTag: 'latest'
+        DockerImageTag: $(Build.BuildId)
 
 
